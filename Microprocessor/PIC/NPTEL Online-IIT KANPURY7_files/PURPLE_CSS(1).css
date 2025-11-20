@@ -1,0 +1,170 @@
+.Heading_big {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #4B0498;
+}
+.Heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #4B0498;
+}
+.SubHeading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #5E52A5;
+}
+.BodyText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align:justify;
+}
+.number {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+}
+.Black_Heading {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+}
+.White_Heading {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.highlight {
+	background-color: BCB8D4;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align:justify;
+}
+.checkbox {
+	border: 1px none #000000;
+	}
+A:link 
+	{ 
+	color: #000000;
+	}
+A:visited 
+	{
+	color: #000000;
+	}
+A:active
+	{ 
+	color: #000000;
+	background-color: E3EAF6;
+	} 
+A:hover 
+	{ 
+	color: #9900FF;
+	} 
+.submit  {
+	background : #BCB8D4;
+	color :  #BCB8D4;	
+	font-family :Arial, Verdana,Geneva;
+	font-size : 10px;
+	font-weight : Bold;
+	border-width : 0;
+    text-align:justify;
+	}
+select
+	{
+	background : #DC8B76;
+	color : #000000;	
+	font-family :Arial, Verdana,Geneva;
+	font-size : 10px;
+	font-weight : normal;
+	border-width : 0;
+    text-align:justify;
+	}
+input
+	{
+	background : #BCB8D4;
+	color : #000000;
+	border-color : #085432;
+	font-family :Arial, Verdana,Geneva;
+	font-size : 11px;
+	font-weight : normal;
+	border-width : 1;
+	}
+textarea
+	{
+	background : #FFFFFF;
+	color : #000000;
+	border-color : #000000;
+	font-family :Arial, Verdana,Geneva;
+	font-size : 10px;
+	font-weight : normal;
+	border-width : 1;
+	}
+	.input
+	{
+	background : #000000;
+	color : #FFFFFF;
+	border-color : #B0C9ED;
+	font-family :Arial, Verdana,Geneva;
+	font-size : 8px;
+	border-width : 1;
+	}
+.textarea
+	{
+	background : #8B45F5;
+	color : #FFFFFF;
+	border-color : #B0C9ED;
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size : 8px;
+	font-weight : normal;
+	border-width : 1;
+	}
+checkbox
+	{
+	background : #FFFFFF;
+	color : #000000;
+	border-color : #000000;
+	font-family :Arial, Verdana,Geneva;
+	font-size : 10px;
+	font-weight : normal;
+	border-width : 1;
+	}
+radio
+	{
+	background : #FFFFFF;
+	color : #000000;
+	border-color : #000000;
+	font-family :Arial, Verdana,Geneva;
+	font-size : 10px;
+	font-weight : normal;
+	border-width : 1;
+	}
+body 
+	{ 
+	scrollbar-3d-light-color: #040C8D;
+	scrollbar-arrow-color: #040C8D; 
+	scrollbar-base-color: #BCB8D4; 
+	scrollbar-dark-shadow-color: #B8D5C8; 
+	scrollbar-face-color: #BCB8D4; 
+	scrollbar-highlight-color: #040C8D; 
+	scrollbar-shadow-color: #085432;
+	}
+

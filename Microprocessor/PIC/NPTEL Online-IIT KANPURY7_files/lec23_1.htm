@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0110)http://www.nptel.iitm.ac.in/courses/Webcourse-contents/IIT-KANPUR/microcontrollers/micro/lecture23/lec23_1.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Text_Template</title>
+
+<link href="PURPLE_CSS(2).css" rel="stylesheet" type="text/css">
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<link href="Red_CSS.css" rel="stylesheet" type="text/css">
+<link href="PURPLE_CSS(3).css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-left: 5px;
+	margin-top: 1px;
+}
+-->
+</style>
+<link href="PURPLE_CSS(1).css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {font-size: 12px; font-style: normal; color: #000000; text-align:justify; font-family: Arial, Helvetica, sans-serif;}
+-->
+</style>
+</head>
+
+<body>
+<table width="736" height="434" border="0" cellpadding="0" cellspacing="0" bgcolor="E3EAF6">
+  <tbody><tr bgcolor="BCB8D4">
+    <td width="24" height="24">&nbsp;</td>
+    <td width="712" class="White_Heading">Module 3 : Introduction to <strong> <strong>PIC Microcontrollers </strong></strong></td>
+  </tr>
+  <tr bgcolor="040C8D">
+    <td height="1" colspan="2"></td>
+  </tr>
+  <tr bgcolor="BCB8D4">
+    <td height="24"></td>
+    <td height="24" bgcolor="BCB8D4" class="White_Heading"> <p><strong>Lecture 23 : Analog to Digital Convertor Module <strong></strong></strong></p>      </td>
+  </tr>
+  <tr bgcolor="5E52A5">
+    <td height="9" colspan="2"></td>
+  </tr>
+  <tr bgcolor="E3EAF6"> 
+    <td height="5" colspan="2" valign="top"><img src="file:///E:/IITPOWAI/images/b.gif" width="5" height="5"></td>
+  </tr>
+  <tr valign="middle" bgcolor="E3EAF6"> 
+    <td height="371" colspan="2"><table width="707" height="345" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
+        <tbody><tr> 
+          <td height="339" valign="top" bgcolor="E3EAF6"><table width="702" height="1400" border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr valign="middle">
+              <td width="360" height="25" class="BodyText"> <p class="Heading">ADC Module </p>                </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>An analog-to-digital converter (ADC) converts an analog signal into an equivalent digital number. PIC 16C74A has an inbuilt ADC with the following features - </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><ul>
+                <li>8-bit conversion </li>
+                <li>8 analog input channels </li>
+                <li>An analog multiplexer </li>
+                <li>A sample and hold circuit for signal on the selected input channel </li>
+                <li>Alternative clock sources for carrying out conversion </li>
+                <li>Adjustable sampling rate </li>
+                <li>Choice of an internal or external reference voltage </li>
+                <li>Interrupt to microcontroller on end of conversion </li>
+              </ul></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>Port A and Port E pins are used for analog inputs/reference voltage for ADC. In A/D conversion, the input analog voltage is digitized and an equivalent digital output is generated as shown in the figure. </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing1.gif" width="387" height="360"></div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"> <div align="center"> Fig 23.1&nbsp; Digital output versus analog input </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p class="SubHeading">Port-A pins (Alternate functions) </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><blockquote>
+                <p>RA0/AN0&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; can be used as analog input-0 <br>
+                    RA1/AN1&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; can be used as analog input-1 <br>
+                    RA2/AN2 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; can be used as analog input-2 <br>
+                    RA3/AN3/V<sub>ref</sub> -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; can be used as analog input-3 or analog reference voltage <br>
+                    RA4/TOCKI &nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clock input to Timer-0 <br>
+                    RA5/ /AN4 &nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; can be used for analog input 4 or slave select for the synchronized serial port. </p>
+              </blockquote></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"> Port-E pins (Alternate functions) </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><blockquote>
+                <p>RE0/ <img src="rd.gif" width="21" height="14" align="absmiddle">/AN5 - can be used as analog input-5 <br>
+                    RE1/ <img src="wr.gif" width="21" height="14" align="absmiddle">/AN6 - can be used as analog input-6 <br>
+                    RE2/ <img src="cs.gif" width="21" height="14" align="absmiddle">/AN7 - can be used as analog input-7 </p>
+              </blockquote></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>PIC microcontroller has internal sample and hold circuit. The input signal should be stable across the capacitor before the conversion is initiated. </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing2.gif" width="436" height="141"></div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"> <div align="center">Fig 23.2&nbsp; Sample and Hold Circuit </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>After waiting for the sampling time, a conversion can be initiated. The ADC Circuit will open the sampling switch and carry out the conversion of the input voltage as it was at the moment of opening of the switch. Upon completion of the conversion, the sampling switch is again closed and V<sub>Hold</sub> once again tracks V<sub>Source</sub>. </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"> Using the A/D Converter </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>Registers ADCON1, TRISA, and TRISE must be initialized to select the reference voltage and input channels. The first step selects the ADC clock from among the four choices (f<sub>osc</sub>/2, f<sub>osc</sub>/8, f<sub>osc</sub>/32, and RC). The constraint for selcting clock frequency is that the ADC clock period must be 1.6micro seconds or greater. </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>The A/D module has 3registers. These registers are:- </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><ul>
+                <li>A/D result register (ADRES) </li>
+                <li>A/D control register 0 (ADCON 0) </li>
+                <li>A/D control register 1 (ADCON 1) </li>
+              </ul></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>The ADCON0&nbsp; register, which is shown below, controls the operation of A/D module. </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing3.gif" width="434" height="36"></div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p align="center" class="SubHeading">Fig 23.3&nbsp; ADCON0 register </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p><span class="highlight">Bit 7-6</span>&nbsp; -&nbsp;&nbsp; A/D Clock select bits <br>
+ADCS1:ADCS0 </p>                </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><blockquote>
+                <p>00 = f<sub>osc</sub>/2 <br>
+                    01 = f<sub>osc</sub>/8 <br>
+                    10 = f<sub>osc</sub>/32 <br>
+                    11 = f<sub>RC</sub>- clock derived from an internal RC oscillator </p>
+              </blockquote></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"> <span class="highlight">Bit 5-3</span>  -&nbsp;&nbsp;  A/D Channel Select <br>
+                CHS2:CHS0 </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><blockquote>
+                <p>000 - Channel 0 - AN0 <br>
+                    001 - Channel 1 - AN1 <br>
+                    010 - Channel 2 - AN2 <br>
+                    011 - Channel 3 - AN3 <br>
+                    100 - Channel 4 - AN4 <br>
+                    101 - Channel 5 - AN5 <br>
+                    110 - Channel 6 - AN6 <br>
+                    111 - Channel 7 - AN7 </p>
+              </blockquote></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p><span class="highlight">Bit 2</span> - A/D conversion status bit </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>&nbsp;GO&nbsp; /&nbsp; <img src="lec23_1_clip_image002.gif" width="36" height="17" align="absmiddle"><br>
+                if       
+                A/D Converter is enabled (ie. ADON = 1) then <br>
+                If GO / <img src="lec23_1_clip_image003.gif" width="36" height="17" align="absmiddle">= 1, A/D conversion is in progress <br>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (setting this bit starts A/D conversion) <br>
+               If GO / <img src="lec23_1_clip_image004.gif" width="36" height="17" align="absmiddle">= 0, A/D conversion is not in progress <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (This bit is automatically cleared by hardware when A/D conversion is complete) </p>                </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"> <span class="highlight">Bit1</span> - Unimplemented </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"> <span class="highlight">Bit 0</span> - ADON: A/D On bit </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><ol>
+                <li>A/D Converter module is ON </li>
+                <li> A/D Converter module is OFF </li>
+              </ol>                </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"> ADCON1 Register </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>This register specifies the analog inputs </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing4.gif" width="434" height="49"></div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"> <div align="center">Fig 23.4&nbsp; ADCON1 register </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><table width="100%" border="1" cellpadding="1">
+                <tbody><tr class="BodyText">
+                  <td width="15%"><div align="center">PCFG2:PCFG0</div></td>
+                  <td width="9%"><div align="center">RA0</div></td>
+                  <td width="10%"><div align="center">RA1</div></td>
+                  <td width="10%"><div align="center">RA2</div></td>
+                  <td width="10%"><div align="center">RA5</div></td>
+                  <td width="10%"><div align="center">RA3</div></td>
+                  <td width="10%"><div align="center">RE0</div></td>
+                  <td width="9%"><div align="center">RE1</div></td>
+                  <td width="8%"><div align="center">RE2</div></td>
+                  <td width="9%"><div align="center">V<sub>REF</sub></div></td>
+                </tr>
+                <tr class="BodyText">
+                  <td><div align="center">000</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">V<sub>DD</sub></div></td>
+                </tr>
+                <tr class="BodyText">
+                  <td><div align="center">001</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">V<sub>REF</sub>&nbsp;</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">RA<sub>3</sub></div></td>
+                </tr>
+                <tr class="BodyText">
+                  <td><div align="center">010</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">V<sub>DD</sub></div></td>
+                </tr>
+                <tr class="BodyText">
+                  <td><div align="center">011</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">V<sub>REF</sub></div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">RA<sub>3</sub></div></td>
+                </tr>
+                <tr class="BodyText">
+                  <td><div align="center">100</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">V<sub>DD</sub></div></td>
+                </tr>
+                <tr class="BodyText">
+                  <td><div align="center">101</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">A</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">V<sub>REF</sub></div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">RA<sub>3</sub></div></td>
+                </tr>
+                <tr class="BodyText">
+                  <td><div align="center">11X</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">D</div></td>
+                  <td><div align="center">-</div></td>
+                </tr>
+              </tbody></table></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"><div align="center">Fig 23.5&nbsp; PCFG2:PCFG0 = A/D Port configuration control bits </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText">A&nbsp; = Analog input<br>
+                D = Digital I/O </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing5.gif" width="534" height="336"></div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"><div align="center">Fig 23.6 Schematic diagram of A/D convertor analog inputs and reference voltage </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading">&nbsp;Steps for A/D conversion </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><ol>
+                <li> Configure A/D module 
+                  <ol>
+                    <ul>
+                      <li>Configure analog inputs/voltage reference and digital I/O (ADCON1) </li>
+                      <li>Select A/D Channel (ADCON0) </li>
+                      <li>Select A/D Conversion Clock (ADCON0) </li>
+                      <li>Turn on A/D Module (ADCON0)
+</li>
+                      </ul>
+                  </ol>
+                  </li>
+                <li>Configure A/D Interrupt (Optional) 
+                  <ol>
+                    <ul>
+                      <li> Clear ADIF bit in PIR1 register
+                      </li>
+                      <li> Set ADIE bit in PIE1 register </li>
+                      <li> Set GIE bit </li>
+                      </ul>
+                  </ol>
+                  </li>
+                <li>Wait for required acquisition time </li>
+                <li>Start Conversion - set GO/ <img src="lec23_1_clip_image002_0000.gif" width="43" height="15"> bit (ADCON0) </li>
+                <li>Wait for A/D conversion to complete, by either polling GO/ <img src="lec23_1_clip_image003_0000.gif"> bit or by waiting for the A/D interrupt </li>
+                <li>Read A/D result registers (ADRES). Clear ADIF if required. </li>
+                </ol>                </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p><span class="highlight">Example Program</span> <br>
+                A/D conversion with interrupt </p>                </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><blockquote>
+                <p>org 000H <br>
+                    goto Mainline <br>
+                    org 020H <br>
+                    bsf&nbsp;&nbsp; STATUS, RP0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Bank 1 <br>
+                    clrf&nbsp;&nbsp; ADCON 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Configure A/D inputs <br>
+                    bsf&nbsp;&nbsp; PIE1, ADIE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enable A/D interrupt <br>
+                    bcf&nbsp;&nbsp; STATUS, RP0&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Bank 0 <br>
+                    movlw&nbsp;&nbsp; 081H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select fosc/32, channel 0, A/D on <br>
+                    movwf&nbsp;&nbsp; ADCON0 <br>
+                    bcf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PIR1,&nbsp;&nbsp; ADIF <br>
+                    bsf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTCON,&nbsp;&nbsp; PEIE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enable peripheral and global interrupt bits <br>
+                    bsf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTCON,&nbsp;&nbsp; GIE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interrupt bits &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+                    ; Ensure that the required sampling time of the selected input channel has been elapsed. <br>
+                    ;
+                    Then conversion may be started. <br>
+                    ; bsf ADCON0, GO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp; Start A/D conversion.<br>                                                               
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp; ADIF bit will be set and GO/ <img src="lec23_1_clip_image002_0001.gif"><br>                                       
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;&nbsp; bit is cleared upon completion of A/D conversion.                    <br>
+</p>
+              </blockquote></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p class="SubHeading">Interrupt Service Routine </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><blockquote>
+                <p>Org 004H <br>
+                    Movf ADRES, W ; Result of A/D conversion in W </p>
+              </blockquote></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"> Consideration of Sampling Time </td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText">When a channel is selected (writing to ADCON0), the switch 'SW' in Fig 23.8 is closed, changing C<sub>HOLD</sub> to V<sub>Source</sub> . When A/D conversion is started (setting Go bit in ADCON0), SW is opened. The time from the closure of 'SW' till the voltage across C<sub>HOLD</sub>&nbsp; (V<sub>o</sub>)&nbsp; reaches V<sub>Source</sub>&nbsp; is the minimum sampling time T<sub>s</sub> . The actual sampling time can be higher than T<sub>s</sub> .<br>
+                The graph between T<sub>s</sub>&nbsp; and source resistance R<sub>Source</sub>&nbsp; is shown in Fig 23.7.+</td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing6.gif" width="459" height="238"> </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"><div align="center">Fig 23.7&nbsp; Relation between sampling time and source resistance </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing7.gif" width="371" height="123"></div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"><div align="center">Fig 23.8 &nbsp; Sampling circuit in the PIC µC</div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>R<sub>ss</sub> is the resistance of the sampling switch 'SW' and C<sub>Hold</sub> is the charge holding capacitance. C<sub>Hold</sub> is nearly 50pF.&nbsp; R<sub>Source</sub> is the impedance of the external analog source Vsource. Once the switch 'SW' is closed, the capacitor Chold takes some time to charge up. This time it is called the sampling time (T<sub>s</sub>). This time varies linearly with R<sub>Source</sub> as shown. The recommended value of impedance of the external analog source, Vsource, is less than 10k&#937;. <br>
+                The circuit in Fig 23.8 is a first order RC circuit. When SW is closed, V<sub>o</sub> varies as shown in Fig 23.9. </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><div align="center"><img src="Drawing8.gif" width="242" height="122"></div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="SubHeading"><div align="center">Fig 23.9&nbsp; </div></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText"><p>From Fig 23.9, </p>
+                <p>T<sub>s</sub> = 5 <img src="tau.gif" width="7" height="9" align="absmiddle">&nbsp;&nbsp; = 5 ( R<sub>source</sub> +&nbsp; R<sub>ss</sub>)&nbsp; C<sub>HOLD</sub> <br>
+&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 5 R<sub>ss</sub> C<sub>HOLD</sub>&nbsp; +&nbsp;&nbsp; 5 R<sub>source</sub> C<sub>HOLD</sub> </p></td>
+            </tr>
+            <tr valign="middle">
+              <td height="25" class="BodyText">Hence sampling time T<sub>s</sub> varies linearly with R<sub>Source</sub> as shown in Fig 23.7. </td>
+            </tr>
+          </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+      <div align="center"> </div>    </td>
+  </tr>
+</tbody></table>
+<script src="urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2741197-1";
+urchinTracker();
+</script>
+  
+
+</body></html>
